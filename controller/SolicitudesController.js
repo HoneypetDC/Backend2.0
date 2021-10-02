@@ -1,19 +1,19 @@
-const mascotasModel = require("../model/MascotasModel")
+const solicitudesModel = require("../model/SolicitudesModel")
 
-module.exports = class MascotasController{
-    static async getAllMascotas(request,response){
+module.exports = class SolicitudesController{
+    static async getAllSolicitudes(request,response){
         try{
-            const result = await mascotasModel.find({});
+            const result = await solicitudesModel.find({});
             response.status(200).json(result);
         }catch(err){
             response.status(404).json({message:err.message});
         }
     }
 
-    static async getMascotaById(request,response){
+    static async getSolicitudById(request,response){
         try {
             const id = request.params.id;
-            const result = await mascotasModel.findOne({_id: id});
+            const result = await solicitudesModel.findOne({_id: id});
             if (result != null) {
               response.status(200).json(result)
               
@@ -25,11 +25,11 @@ module.exports = class MascotasController{
         }
     }
 
-    static async getMascotaDosParametros(request,response){
+    static async getSolicitudDosParametros(request,response){
         try{
             const p1 = request.params.param1;
             const p2 = request.params.param2;
-            const result = await mascotasModel.find({pet_name: p1, pet_location:p2}) 
+            const result = await solicitudesModel.find({pet_name: p1, pet_location:p2}) 
             if(result != null){
                 response.status(200).json(result)
             }else{
@@ -42,41 +42,41 @@ module.exports = class MascotasController{
 
     }
 
-    static async deleteMascotaById(request, response){
+    static async deleteSolicitudById(request, response){
         try {
           const id = request.params.id;
-          await mascotasModel.deleteOne({_id: id});
+          await solicitudesModel.deleteOne({_id: id});
           response.status(200).json();
         } catch (err) {
           response.status(400).json({message: err.message})
         }
       }
 
-    static async insertMascota(request,response){        
+    static async insertSolicitud(request,response){        
         try{
             const documento = request.body;
-            const newMascota = await mascotasModel.create(documento);
+            const newMascota = await solicitudesModel.create(documento);
             response.status(201).json(newMascota);
         }catch(err){
             response.status(400).json({message: err.message}); 
         }
     }
 
-    static async updateMascotaById(request,response){        
+    static async updateSolicitudById(request,response){        
         try{
             const id = request.params.id;
             const documento = request.body;
-            await mascotasModel.updateOne({_id: id}, documento);
+            await solicitudesModel.updateOne({_id: id}, documento);
             response.status(201).json();
         }catch(err){
             response.status(400).json({message: err.message}); 
         }
     }
 
-    static async replaceMascotaById(request,response){        
+    static async replaceSolicitudById(request,response){        
         try{
             const id = request.params.id;
-            await mascotasModel.updateOne({"_id": id}, {"pet_name": "Ramon"});
+            await solicitudesModel.updateOne({"_id": id}, {"pet_name": "Ramon"});
             response.status(201).json();
         }catch(err){
             response.status(400).json({message: err.message}); 
