@@ -1,6 +1,7 @@
 const mascotasModel = require("../model/MascotasModel")
 
 module.exports = class MascotasController{
+
     static async getAllMascotas(request,response){
         try{
             const result = await mascotasModel.find({});
@@ -10,26 +11,25 @@ module.exports = class MascotasController{
         }
     }
 
-    static async getMascotaById(request,response){
+    static async getMascotaById(request, response) {
         try {
-            const id = request.params.id;
-            const result = await mascotasModel.findOne({_id: id});
-            if (result != null) {
-              response.status(200).json(result)
-              
-            } else {
-              response.status(404).json();
-            }
-          } catch (err) {
-            response.status(404).json({message: err.message})
+          const id = request.params.id;
+          const result = await mascotasModel.findOne({_id: id});
+          if (result != null) {
+            response.status(200).json(result)
+          } else {
+            response.status(404).json();
+          }
+        } catch (err) {
+          response.status(400).json({message: err.message})
         }
-    }
+      }
 
     static async getMascotaDosParametros(request,response){
         try{
             const p1 = request.params.param1;
             const p2 = request.params.param2;
-            const result = await mascotasModel.find({pet_name: p1, pet_location:p2}) 
+            const result = await mascotasModel.find({pet_type: p1, pet_location:p2}) 
             if(result != null){
                 response.status(200).json(result)
             }else{

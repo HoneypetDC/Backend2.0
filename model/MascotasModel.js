@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const mascotasSchema = mongoose.Schema({
-    "_id": String,
     "pet_name": {
         type: String,
         required: [true, "El nombre de la mascota es obligatorio"],
