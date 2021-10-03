@@ -1,0 +1,1 @@
+GET http://localhost:3000/api/mascotas/id/6158bd2bf6a5f47303ea423c

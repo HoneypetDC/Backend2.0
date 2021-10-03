@@ -1,0 +1,12 @@
+POST http://localhost:3000/api/mascotas/
+content-type: application/json
+
+{
+    "pet_name": "Borrar",
+    "pet_type": "perro",
+    "pet_location": "Ibague",
+    "pet_pic": "img/pets/pet-1.jpg",
+    "pet_thum": "img/pets/thums/thums-1.jpg",
+    "pet_phone": 234567,
+    "pet_description": "Es muy bonito el perrito"
+}

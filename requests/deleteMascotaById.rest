@@ -1,0 +1,1 @@
+DELETE http://localhost:3000/api/mascotas/id/615916a191f3c527408d0502
