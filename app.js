@@ -6,19 +6,19 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({extended:true}))
-
+app.use(express.urlencoded({ extended: true }));
 
 //rutas
-app.use("/api",require("./routes/routes"));
+app.use("/api", require("./routes/routes"));
 
 //DB
 const mongoose = require("mongoose");
-mongoose.connect(process.env.URI_DB)
-    .then(()=>console.log("Conexion OK con DB"))
-    .catch(err => console.error(err));
+mongoose
+  .connect(process.env.URI_DB)
+  .then(() => console.log("Conexion OK con DB"))
+  .catch((err) => console.error(err));
 
 const port = process.env.PORT;
-app.listen(port,()=>
-    console.log(`La aplicacion esta escuchando en http://localhost:${port}`)
-)
+app.listen(port, () =>
+  console.log(`La aplicacion esta escuchando en http://localhost:${port}`)
+);
