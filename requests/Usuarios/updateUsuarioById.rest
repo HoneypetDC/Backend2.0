@@ -1,0 +1,11 @@
+PUT http://localhost:3000/api/usuarios/id/615e12a44699f8a1f354d4ed/
+content-type: application/json
+
+{
+  "user_name": "Nelsi",
+  "user_email": "userNelsi@demo.com",
+  "user_password": "123456",
+  "user_phone": 3124578967,
+  "user_pubs": [],
+  "user_adopts": []
+}

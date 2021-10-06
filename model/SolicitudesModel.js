@@ -1,11 +1,17 @@
 const mongoose = require("mongoose");
+const {Schema} = require('mongoose');
 
 const solicitudesSchema = mongoose.Schema({
 
-    "_id":Object,
     "date": { type: Date, required: true, default: Date.now },
-    "pet_id": String, //to do join
-    "candidate_id": String, //to do join
+    "pet_id": {
+      type: Schema.Types.ObjectId,
+      ref:'MascotasModel'
+    }, //to do join
+    "candidate_id": {
+      type: Schema.Types.ObjectId,
+      ref:'UsuariosModel'
+    }, //to do join
     "reqs_state": { type: String, default: "En estudio" }
   
     //agregar las publicaciones y las adopciones joins

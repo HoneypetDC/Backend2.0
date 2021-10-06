@@ -1,0 +1,10 @@
+POST http://localhost:3000/api/solicitudes/
+content-type: application/json
+
+{
+
+    "pet_id": "6158b5c6f6a5f47303e32b75", 
+    "candidate_id": "615e12254699f8a1f354d4ea"
+
+}
+

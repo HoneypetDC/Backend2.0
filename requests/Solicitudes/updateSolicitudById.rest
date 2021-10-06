@@ -1,0 +1,6 @@
+PUT http://localhost:3000/api/solicitudes/id/615e18b6928c921465a4084d/
+content-type: application/json
+
+{
+    "reqs_state": "Aprobada"
+}

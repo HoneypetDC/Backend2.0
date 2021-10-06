@@ -24,23 +24,23 @@ module.exports = class UsuariosController {
     }
   }
 
-  static async getUsuariosDosParametros(request, response) {
-    try {
-      const p1 = request.params.param1;
-      const p2 = request.params.param2;
-      const result = await usuariosModel.find({
-        user_name: p1,
-        user_email: p2,
-      });
-      if (result != null) {
-        response.status(200).json(result);
-      } else {
-        response.status(404).json();
-      }
-    } catch (err) {
-      response.status(400).json({ message: err.message });
-    }
-  }
+  // static async getUsuariosDosParametros(request, response) {
+  //   try {
+  //     const p1 = request.params.param1;
+  //     const p2 = request.params.param2;
+  //     const result = await usuariosModel.find({
+  //       user_name: p1,
+  //       user_email: p2,
+  //     });
+  //     if (result != null) {
+  //       response.status(200).json(result);
+  //     } else {
+  //       response.status(404).json();
+  //     }
+  //   } catch (err) {
+  //     response.status(400).json({ message: err.message });
+  //   }
+  // }
 
   static async deleteUsuariosById(request, response) {
     try {
@@ -52,7 +52,7 @@ module.exports = class UsuariosController {
     }
   }
 
-  static async insertUsuarios(request, response) {
+  static async createUsuarios(request, response) {
     try {
       const documento = request.body;
       const newMascota = await usuariosModel.create(documento);
