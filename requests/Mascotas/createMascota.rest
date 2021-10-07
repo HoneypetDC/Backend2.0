@@ -2,11 +2,12 @@ POST http://localhost:3000/api/mascotas/
 content-type: application/json
 
 {
-    "pet_name": "Borrar",
+    "publisher_id": "615e12a44699f8a1f354d4ed",
+    "pet_name": "GATOMAN",
     "pet_type": "perro",
     "pet_location": "Ibague",
     "pet_pic": "img/pets/pet-1.jpg",
-    "pet_thum": "img/pets/thums/thums-1.jpg",
+    "pet_thumb": "img/pets/thums/thums-1.jpg",
     "pet_phone": 234567,
     "pet_description": "Es muy bonito el perrito"
 }

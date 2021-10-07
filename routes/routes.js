@@ -8,6 +8,7 @@ const router = express.Router();
 //Rutas Mascotas
 
 router.get("/mascotas/all", mascotasController.getAllMascotas);
+router.get("/mascotas/last", mascotasController.getLastMascotas);
 router.get("/mascotas/id/:id", mascotasController.getMascotaById);
 router.get("/mascotas/:param1/:param2", mascotasController.getMascotaDosParametros);
 router.delete("/mascotas/id/:id", mascotasController.deleteMascotaById);
