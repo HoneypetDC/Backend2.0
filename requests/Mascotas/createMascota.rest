@@ -2,7 +2,7 @@ POST http://localhost:3000/api/mascotas/
 content-type: application/json
 
 {
-    "publisher_id": "615e12a44699f8a1f354d4ed",
+    "publisher_id": "615e62036ffbd9aad838f1cf",
     "pet_name": "GATOMAN",
     "pet_type": "perro",
     "pet_location": "Ibague",

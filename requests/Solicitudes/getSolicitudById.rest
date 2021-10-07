@@ -1,1 +1,1 @@
-GET http://localhost:3000/api/mascotas/id/6158bd2bf6a5f47303ea423c
+GET http://localhost:3000/api/solicitudes/id/615e6f8612a274175c935183

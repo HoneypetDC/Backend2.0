@@ -1,4 +1,6 @@
 const solicitudesModel = require("../model/SolicitudesModel");
+const mascotasModel = require("../model/MascotasModel");
+const usuariosModel = require("../model/UsuariosModel");
 
 module.exports = class SolicitudesController {
   static async getAllSolicitudes(request, response) {
@@ -54,9 +56,27 @@ module.exports = class SolicitudesController {
 
   static async insertSolicitud(request, response) {
     try {
-      const documento = request.body;
-      const newMascota = await solicitudesModel.create(documento);
-      response.status(201).json(newMascota);
+      const {
+        date,
+        pet_id,
+        candidate_id,
+        reqs_state,
+
+      } = request.body;
+
+      const applicant = await usuariosModel.findById(candidate_id)
+      const pet = await mascotasModel.findById(pet_id)
+
+      const newSolicitud = await solicitudesModel.create({
+        date,
+        pet_id: pet._id,
+        candidate_id: applicant._id,
+        reqs_state,
+      });
+      const saveSolicitud = await newSolicitud.save() 
+      pet.pet_request = pet.pet_request.concat(saveSolicitud._id)
+      await pet.save()
+      response.status(201).json(saveSolicitud);
     } catch (err) {
       response.status(400).json({ message: err.message });
     }
