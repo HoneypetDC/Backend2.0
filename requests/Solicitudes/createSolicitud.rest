@@ -3,8 +3,8 @@ content-type: application/json
 
 {
 
-    "pet_id": "615e6f28c3e1f419f6d21ee3", 
-    "candidate_id": "615e62036ffbd9aad838f1cf"
+    "pet_id": "615e7cf95288a30c8bd04cbf", 
+    "candidate_id": "615e622c6ffbd9aad83915b3"
 
 }
 

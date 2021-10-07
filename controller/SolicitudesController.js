@@ -77,6 +77,7 @@ module.exports = class SolicitudesController {
       pet.pet_request = pet.pet_request.concat(saveSolicitud._id)
       applicant.user_adopts = applicant.user_adopts.concat(saveSolicitud._id)
       await pet.save()
+      await applicant.save()
       response.status(201).json(saveSolicitud);
     } catch (err) {
       response.status(400).json({ message: err.message });
