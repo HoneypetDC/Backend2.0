@@ -12,9 +12,10 @@ module.exports = class MascotasController {
     }
   }
 
+
   static async getLastMascotas(request, response) {
     try {
-      const result = await mascotasModel.find({}).limit(4);
+      const result = await mascotasModel.find({}).sort({$natural:-1}).limit(4);
       response.status(200).json(result);
     } catch (err) {
       response.status(404).json({ message: err.message });
