@@ -20,6 +20,7 @@ router.put("/mascotas/id/:id", mascotasController.updateMascotaById);
 
 router.get("/usuarios/all", usuariosController.getAllUsuarios);
 router.get("/usuarios/id/:id", usuariosController.getUsuariosById);
+router.get("/usuarios/email/:email", usuariosController.getUsuariosByEmail);
 //router.get("/usuarios/:param1/:param2", usuariosController.getUsuariosDosParametros);
 router.delete("/usuarios/id/:id", usuariosController.deleteUsuariosById);
 router.post("/usuarios/", usuariosController.createUsuarios);

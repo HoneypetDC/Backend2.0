@@ -35,7 +35,7 @@ module.exports = class SolicitudesController {
       if (result != null) {
         response.status(200).json(result);
       } else {
-        response.status(404).json();
+        response.status(404).json(d);
       }
     } catch (err) {
       response.status(400).json({ message: err.message });

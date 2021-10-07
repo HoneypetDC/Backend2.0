@@ -36,6 +36,8 @@ module.exports = class MascotasController {
     }
   }
 
+  
+
   static async getMascotaDosParametros(request, response) {
     try {
       const p1 = request.params.param1;

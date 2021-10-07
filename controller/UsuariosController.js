@@ -24,6 +24,20 @@ module.exports = class UsuariosController {
     }
   }
 
+  static async getUsuariosByEmail(request, response) {
+    try {
+      const email = request.params.param1
+      const result = await usuariosModel.findOne({user_emai: email });
+      if (result != null) {
+        response.status(200).json(result);
+      } else {
+        response.status(404).json();
+      }
+    } catch (err) {
+      response.status(404).json({ message: err.message });
+    }
+  }
+
   // static async getUsuariosDosParametros(request, response) {
   //   try {
   //     const p1 = request.params.param1;
