@@ -26,8 +26,8 @@ module.exports = class UsuariosController {
 
   static async getUsuariosByEmail(request, response) {
     try {
-      const email = request.params.param1
-      const result = await usuariosModel.findOne({user_emai: email });
+      const email = request.params.email
+      const result = await usuariosModel.findOne({user_email: email });
       if (result != null) {
         response.status(200).json(result);
       } else {

@@ -1,1 +1,1 @@
-GET http://localhost:3000/api/usuarios/email/user1@demo.com
+GET http://localhost:3000/api/usuarios/email/usa@demo.com
