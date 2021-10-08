@@ -5,7 +5,8 @@ const mascotasSchema = mongoose.Schema({
     
     "publisher_id": {
       type: Schema.Types.ObjectId,
-      ref:'UsuariosModel'
+      ref:'UsuariosModel',
+      required: [true, "El id del publisher es obligatorio"],
     },
     "pet_name": {
         type: String,

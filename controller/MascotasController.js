@@ -58,9 +58,19 @@ module.exports = class MascotasController {
 
   static async deleteMascotaById(request, response) {
     try {
-      const id = request.params.id;
-      await mascotasModel.deleteOne({ _id: id });
-      response.status(200).json();
+      const idmascota = request.params.idmascota;
+      const idpublisher = request.params.idpublisher;
+
+      await mascotasModel.deleteOne({ _id: idmascota });
+
+      const publisher = await usuariosModel.findById(idpublisher);
+      const posMascota = await publisher.user_pubs.indexOf(idmascota) 
+
+      console.log(publisher);
+
+      publisher.user_pubs.splice(posMascota,1);
+      await publisher.save()
+      response.status(200).json('Mascota eliminada');
     } catch (err) {
       response.status(400).json({ message: err.message });
     }

@@ -2,12 +2,12 @@ POST http://localhost:3000/api/mascotas/
 content-type: application/json
 
 {
-    "publisher_id": "615e620f6ffbd9aad838fb3e",
-    "pet_name": "LUNA",
-    "pet_type": "perro",
-    "pet_location": "Ibague",
-    "pet_pic": "img/pets/pet-1.jpg",
-    "pet_thumb": "img/pets/thums/thums-1.jpg",
-    "pet_phone": 234567,
-    "pet_description": "Es muy bonito el perrito"
+    "publisher_id": "616083fd6ffbd9aad8493cd7",
+    "pet_name" : "Beethoven",
+    "pet_pic" : "img/pets/pet-1.jpg",
+    "pet_thumb" : "img/pets/thums/thums-1.jpg",
+    "pet_type" : "perro",
+    "pet_description" : "Mamífero doméstico de la familia de los cánidos , de tamaño , forma y pelaje muy diversos",
+    "pet_phone" : 2091389021,
+    "pet_location" : "Ibague"
 }

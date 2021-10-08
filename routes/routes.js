@@ -11,7 +11,7 @@ router.get("/mascotas/all", mascotasController.getAllMascotas);
 router.get("/mascotas/last", mascotasController.getLastMascotas);
 router.get("/mascotas/id/:id", mascotasController.getMascotaById);
 router.get("/mascotas/:param1/:param2", mascotasController.getMascotaDosParametros);
-router.delete("/mascotas/id/:id", mascotasController.deleteMascotaById);
+router.delete("/mascotas/:idmascota/:idpublisher", mascotasController.deleteMascotaById);
 router.post("/mascotas/", mascotasController.insertMascota);
 router.put("/mascotas/id/:id", mascotasController.updateMascotaById);
 //router.put("/mascotas/:id", mascotasController.replaceById)

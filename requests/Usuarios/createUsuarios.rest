@@ -4,8 +4,8 @@ content-type: application/json
 {
         
     "user_name": "Ivan",
-    "user_email": "user4@demo.com",
+    "user_email": "user5@demo.com",
     "user_password": "123456",
-    "user_phone": 3124578967
+    "user_phone": 3169578426
 
 }
