@@ -1,6 +1,7 @@
 const express = require("express");
 const mascotasController = require("../controller/MascotasController");
 const usuariosController = require("../controller/UsuariosController");
+const emailController = require("../controller/EmailController");
 const solicitudesController = require("../controller/SolicitudesController");
 
 const router = express.Router();
@@ -36,5 +37,10 @@ router.delete("/solicitudes/id/:id", solicitudesController.deleteSolicitudById);
 router.post("/solicitudes/", solicitudesController.insertSolicitud);
 router.put("/solicitudes/id/:id", solicitudesController.updateSolicitudById);
 //router.put("/solicitudes/:id", solicitudesController.replaceSolicitudById)
+
+//Rutas Emails
+router.post("/email/", emailController.main);
+
+
 
 module.exports = router;

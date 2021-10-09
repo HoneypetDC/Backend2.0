@@ -1,0 +1,10 @@
+POST http://localhost:3000/api/email/
+content-type: application/json
+
+{
+        
+    "name": "Miguel Nieto",
+    "email": "miguelnieto.08@gmail.com",
+    "asunto": "Alianzaa"
+
+}
