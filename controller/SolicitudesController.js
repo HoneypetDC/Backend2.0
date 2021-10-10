@@ -69,7 +69,7 @@ module.exports = class SolicitudesController {
 
       const newSolicitud = await solicitudesModel.create({
         date,
-        pet_id: pet._id,
+        pet_id: pet,
         candidate_id: applicant._id,
         reqs_state,
       });
