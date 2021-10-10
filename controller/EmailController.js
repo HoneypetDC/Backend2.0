@@ -6,12 +6,13 @@ module.exports = class MascotasController {
         try {
 
             const {
-                name,
+                nombre,
                 email,
-                asunto
+                asunto,
+                mensaje
             }= request.body;
 
-            console.log(name);
+            console.log(nombre);
             console.log(email);
             console.log(asunto);
 
@@ -25,10 +26,15 @@ module.exports = class MascotasController {
                 },
             });
             await transporter.sendMail({
-                from: '"HoneyPetDC 👻" <honeypetdc@gmail.com>', // sender address
-                to: email, // list of receivers
-                subject: asunto, // Subject line
-                html: "Hola "+name+", gracias por querer apoyarnos, puedes enviarnos dinero a la siguiente cuenta 321-456-789", // html body
+                from: `${nombre}, ${email}`, // sender address
+                to: "honeypetdc@gmail.com", // list of receivers
+                subject: `${asunto}, desde la Web`, // Subject line
+                html: /*html*/`
+                    <p><strong>Nombre o empresa: </strong>${nombre}</p>
+                    <p><strong>Correo: </strong>${email}</p>
+                    <p><strong>Asunto: </strong>${asunto}</p>
+                    <p><strong>Mensaje: </strong>${mensaje}</p>
+                `
             });
             response.status(201).json("hola");
         } catch (err) {

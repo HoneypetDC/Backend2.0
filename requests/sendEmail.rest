@@ -3,8 +3,9 @@ content-type: application/json
 
 {
         
-    "name": "Miguel Nieto",
+    "nombre": "Miguel Nieto",
     "email": "miguelnieto.08@gmail.com",
-    "asunto": "Alianzaa"
+    "asunto": "Alianzaa",
+    "mensaje": "hola, quiero aliarme"
 
 }
