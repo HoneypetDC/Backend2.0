@@ -3,8 +3,23 @@ const mascotasController = require("../controller/MascotasController");
 const usuariosController = require("../controller/UsuariosController");
 const emailController = require("../controller/EmailController");
 const solicitudesController = require("../controller/SolicitudesController");
+const multer = require("multer");
+const { response, request } = require("express");
+
+const storageConfi = multer.diskStorage({
+    destination: (require, file, cb)=>{
+        cb(null, "./uploads")
+        
+    },
+    filename: (request,file,cb) => {
+        const ext = file.originalname.split('.').pop()
+        cb(null, `${Date.now()}.png`)
+        
+    }
+})
 
 const router = express.Router();
+const upload = multer({storage:storageConfi})
 
 //Rutas Mascotas
 
@@ -13,7 +28,7 @@ router.get("/mascotas/last", mascotasController.getLastMascotas);
 router.get("/mascotas/id/:id", mascotasController.getMascotaById);
 router.get("/mascotas/:param1/:param2", mascotasController.getMascotaDosParametros);
 router.delete("/mascotas/:idmascota/:idpublisher", mascotasController.deleteMascotaById);
-router.post("/mascotas/", mascotasController.insertMascota);
+router.post("/mascotas",upload.single("image"), mascotasController.insertMascota);
 router.put("/mascotas/id/:id", mascotasController.updateMascotaById);
 //router.put("/mascotas/:id", mascotasController.replaceById)
 

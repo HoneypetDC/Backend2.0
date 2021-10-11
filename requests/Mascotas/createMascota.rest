@@ -4,10 +4,8 @@ content-type: application/json
 {
     "publisher_id": "61608a873ff1113d40794042",
     "pet_name" : "penny",
-    "pet_pic" : "img/pets/pet-2.jpg",
-    "pet_thumb" : "img/pets/thums/thums-2.jpg",
     "pet_type" : "gato",
     "pet_description" : "Mamífero doméstico de la familia de los cánidos , de tamaño , forma y pelaje muy diversos",
     "pet_phone" : 2091389021,
-    "pet_location" : "Ibague"
+    "pet_location" : "Tolima"
 }
