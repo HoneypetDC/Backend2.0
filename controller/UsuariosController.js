@@ -10,6 +10,15 @@ module.exports = class UsuariosController {
     }
   }
 
+  static async getAllUsuarios2(request, response) {
+    try {
+      const result = await usuariosModel.find({});
+      return result
+    } catch (err) {
+      response.status(404).json({ message: err.message });
+    }
+  }
+
   static async getUsuariosById(request, response) {
     try {
       const id = request.params.id;

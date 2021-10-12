@@ -1,1 +1,1 @@
-DELETE http://localhost:3000/api/mascotas/61650b7092dcad1db9884ba0/616505d62b53f24dff87a589
+DELETE http://localhost:3000/api/mascotas/6165f1a27ac1187f6e651ca1/6165f0ca7ac1187f6e651c8c

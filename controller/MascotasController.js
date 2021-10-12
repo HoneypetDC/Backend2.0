@@ -1,5 +1,6 @@
 const mascotasModel = require("../model/MascotasModel");
 const usuariosModel = require("../model/UsuariosModel");
+const usuarioController = require("../controller/UsuariosController")
 const sharp = require('sharp')
 
 
@@ -8,6 +9,15 @@ module.exports = class MascotasController {
     try {
       const result = await mascotasModel.find({});
       response.status(200).json(result);
+    } catch (err) {
+      response.status(404).json({ message: err.message });
+    }
+  }
+
+  static async getAllMascotas2(request, response) {
+    try {
+      const result = await mascotasModel.find({});
+      return result
     } catch (err) {
       response.status(404).json({ message: err.message });
     }
@@ -66,6 +76,18 @@ module.exports = class MascotasController {
 
       const publisher = await usuariosModel.findById(idpublisher);
       const posMascota = await publisher.user_pubs.indexOf(idmascota) 
+      
+      const usuarios = await usuarioController.getAllUsuarios2()
+
+      console.log(usuarios)
+      usuarios.forEach(usuario => {
+        for (let index = 0; index < usuario.user_adopts.length; index++) {
+          if (usuario.user_adopts[index]==idmascota) {
+            usuario.user_adopts.splice(index,1)
+            usuario.save()
+          }          
+        }
+      });
 
       console.log(publisher);
 
@@ -76,6 +98,8 @@ module.exports = class MascotasController {
       response.status(400).json({ message: err.message });
     }
   }
+
+
 
   static async insertMascota(request, response) {
 
