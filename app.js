@@ -11,6 +11,9 @@ app.use(express.urlencoded({ extended: true }));
 //rutas
 app.use("/api", require("./routes/routes"));
 
+// carga de archivos
+app.use(express.static("uploads"));
+
 //DB
 const mongoose = require("mongoose");
 mongoose
