@@ -104,8 +104,8 @@ module.exports = class MascotasController {
       const newMascota = await mascotasModel.create({
         publisher_id:publisher_id,
         pet_name, 
-        pet_pic: request.file.path,
-        pet_thumb:`./opt/pet-${request.file.filename}`,
+        pet_pic: `./uploads/${request.file.filename}`,
+        pet_thumb:`./thumbs/${request.file.filename}`,
         pet_type,
         pet_description,
         pet_phone,
