@@ -13,7 +13,7 @@ const mascotasSchema = mongoose.Schema({
         required: [true, "El nombre de la mascota es obligatorio"],
       },
     "pet_pic": { type: String, required: [true, "La foto es obligatoria"] },
-    "pet_thumb": { type: String, required: true },
+    "pet_thumb": String,
     "pet_type": { type: String, required: true },
     "pet_description": {
         type: String,
