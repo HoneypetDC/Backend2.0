@@ -12,9 +12,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api", require("./routes/routes"));
 
 // carga de archivos
-app.use(express.static("uploads"));
+// app.use(express.static("thumb"));
+// app.use(express.static("uploads"));
 
-//DB
+//heroku
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static(__dirname + '/site/'))
+  app.use('*',(req,res)=>{
+    res.sendFile(__dirname + '/site/index.html')
+  })
+}
+
+// DB
 const mongoose = require("mongoose");
 mongoose
   .connect(process.env.URI_DB)

@@ -8,12 +8,12 @@ const { response, request } = require("express");
 
 const storageConfi = multer.diskStorage({
     destination: (require, file, cb)=>{
-        cb(null, "./uploads")
+        cb(null, "site/pets")
         
     },
     filename: (request,file,cb) => {
         const ext = file.originalname.split('.').pop()
-        cb(null, `${Date.now()}.png`)
+        cb(null, `pet-${Date.now()}.${ext}`)
         
     }
 })

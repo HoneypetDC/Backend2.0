@@ -106,7 +106,7 @@ module.exports = class MascotasController {
     const editImage =(filePath,filename, size) => {
       return sharp(filePath)
         .resize(size,size)
-        .toFile(`./thumbs/${filename}`)
+        .toFile(`site/thumbs/${filename}`)
     }
 
     try {
@@ -121,15 +121,15 @@ module.exports = class MascotasController {
         pet_request
       }= request.body;
 
-      editImage(request.file.path,`pet-${request.file.filename}`,350)
-
+      editImage(request.file.path,`t-${request.file.filename}`,350)
+      console.log(request.file.path)
       const publisher = await usuariosModel.findById(publisher_id)
 
       const newMascota = await mascotasModel.create({
         publisher_id:publisher_id,
         pet_name, 
-        pet_pic: `./uploads/${request.file.filename}`,
-        pet_thumb:`./thumbs/${request.file.filename}`,
+        pet_pic: `pets/${request.file.filename}`,
+        pet_thumb:`thumbs/t-${request.file.filename}`,
         pet_type,
         pet_description,
         pet_phone,
