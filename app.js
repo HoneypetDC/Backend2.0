@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //rutas
 
+app.use("/api", require("./routes/routes"));
 
 // carga de archivos
 // app.use(express.static("thumbs"));
@@ -17,10 +18,6 @@ app.use(express.urlencoded({ extended: true }));
 
 //heroku
 if(process.env.NODE_ENV === 'production'){
-  app.use("/api", require("./routes/routes"));
-  app.use(express.static("thumbs"));
-  app.use(express.static("pets"));
-
   app.use(express.static(__dirname + '/site/'))
   app.use('*',(req,res)=>{
     res.sendFile(__dirname + '/site/index.html')
