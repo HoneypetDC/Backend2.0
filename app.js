@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //rutas
 app.use("/api", require("./routes/routes"));
+<<<<<<< HEAD
 
 // carga de archivos
 // app.use(express.static("thumb"));
@@ -22,6 +23,8 @@ if(process.env.NODE_ENV === 'production'){
     res.sendFile(__dirname + '/site/index.html')
   })
 }
+=======
+>>>>>>> f00bea3f18bfa53b16f5be1faab7c1ba10732400
 
 // DB
 const mongoose = require("mongoose");
