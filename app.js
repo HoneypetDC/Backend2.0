@@ -15,7 +15,7 @@ app.use("/api", require("./routes/routes"));
 // carga de archivos
 // app.use(express.static("thumbs"));
 // app.use(express.static("pets"));
-
+//comentario 
 //heroku
 if(process.env.NODE_ENV === 'production'){
   app.use(express.static(__dirname + '/site/'))
