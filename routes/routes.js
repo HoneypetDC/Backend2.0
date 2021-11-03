@@ -26,6 +26,8 @@ const upload = multer({storage:storageConfi})
 router.get("/mascotas/all", mascotasController.getAllMascotas);
 router.get("/mascotas/last", mascotasController.getLastMascotas);
 router.get("/mascotas/id/:id", mascotasController.getMascotaById);
+router.get("/mascotas/type/:type", mascotasController.getMascotasByType);
+router.get("/mascotas/loc/:loc", mascotasController.getMascotasByLocation);
 router.get("/mascotas/:param1/:param2", mascotasController.getMascotaDosParametros);
 router.delete("/mascotas/:idmascota/:idpublisher", mascotasController.deleteMascotaById);
 router.post("/mascotas",upload.single("image"), mascotasController.insertMascota);

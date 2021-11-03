@@ -46,8 +46,34 @@ module.exports = class MascotasController {
       response.status(400).json({ message: err.message });
     }
   }
-
   
+  static async getMascotasByType(request, response) {
+    try {
+      const type = request.params.type;
+      const result = await mascotasModel.find({ pet_type: type });
+      if (result != null) {
+        response.status(200).json(result);
+      } else {
+        response.status(404).json();
+      }
+    } catch (err) {
+      response.status(400).json({ message: err.message });
+    }
+  }
+  
+  static async getMascotasByLocation(request, response) {
+    try {
+      const loc = request.params.loc;
+      const result = await mascotasModel.find({ pet_location: loc });
+      if (result != null) {
+        response.status(200).json(result);
+      } else {
+        response.status(404).json();
+      }
+    } catch (err) {
+      response.status(400).json({ message: err.message });
+    }
+  }
 
   static async getMascotaDosParametros(request, response) {
     try {
